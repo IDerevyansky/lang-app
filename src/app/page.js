@@ -6,11 +6,11 @@ export default function Home() {
     <main className="main center-content">
 
       <div className="padding">
-        <h3>Выбери свой родной язык</h3>
-        <p>А хотя не надо! Мы и так знаем, что он Русский 🇷🇺</p>
+        <h1>Lingo</h1>
+        {/* <p>Learn easily and simply</p> */}
       </div>
 
-      <Link href="/target-lang" className="btn">Делее</Link>
+      {/* <Link href="/target-lang" className="btn">Делее</Link> */}
 
     </main>
   );

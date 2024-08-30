@@ -37,6 +37,13 @@ h3{
   text-slate-700
 }
 
+h1{
+  @apply
+  text-3xl
+  font-semibold
+  text-slate-700
+}
+
 p{
   @apply
   text-base
