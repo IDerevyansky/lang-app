@@ -16,16 +16,16 @@ export default function TargetLang() {
         <p>Выбери язык который хочешь учить</p>
       </div>
 
-        <div className={select=='English'?'label-select':'label'} onClick={()=>(setSelect('English'))} >
+        <div className={select=='en-US'?'label-select':'label'} onClick={()=>(setSelect('en-US'))} >
         🇺🇸 English
         </div>
 
-        <div className={select=='Spanish'?'label-select':'label'} onClick={()=>(setSelect('Spanish'))}>
+        <div className={select=='es-ES'?'label-select':'label'} onClick={()=>(setSelect('es-ES'))}>
         🇪🇸 Spanish
         </div>
 
 
-      <Link href="/target-lang" className="btn">Делее</Link>
+      <Link href={"/"+ select.slice(0,2)} className="btn">Делее</Link>
 
     </main>
   );

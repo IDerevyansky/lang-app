@@ -89,6 +89,7 @@ p{
   px-12
   mx-auto
   w-fit
+  cursor-pointer
 }
 
 .label-select {
@@ -104,5 +105,6 @@ p{
   w-fit
   flex
   gap-4
+  cursor-pointer
   /* text-slate-50 */
 }
