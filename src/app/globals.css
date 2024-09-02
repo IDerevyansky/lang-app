@@ -108,3 +108,10 @@ p{
   cursor-pointer
   /* text-slate-50 */
 }
+
+.lng-box{
+  @apply
+  flex
+  flex-col
+  gap-4
+}
