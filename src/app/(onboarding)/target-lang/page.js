@@ -17,6 +17,7 @@ export default function TargetLang() {
       </div>
 
         <div className="lng-box">
+
           <div className={select=='en-US'?'label-select':'label'} onClick={()=>(setSelect('en-US'))} >
           🇺🇸 English
           </div>
@@ -24,10 +25,12 @@ export default function TargetLang() {
           <div className={select=='es-ES'?'label-select':'label'} onClick={()=>(setSelect('es-ES'))}>
           🇪🇸 Spanish
           </div>
+
         </div>
 
 
       <Link href={"/"+ select.slice(0,2)} className="btn">Делее</Link>
+
 
     </main>
   );

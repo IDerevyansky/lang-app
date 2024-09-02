@@ -1,10 +1,11 @@
 import Image from "next/image";
+import './vcblr.css';
 
-export default function result({ params }) {
+export default function vcblr({ params }) {
 
   return (
     <main className="main center-content">
-      <p>{params.result}</p>
+      <p className="test">qwe</p>
     </main>
   );
   
