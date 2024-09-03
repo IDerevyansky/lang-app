@@ -1,4 +1,59 @@
-.test{
+.content-box{
     @apply
-    text-red-600
+    flex
+    flex-col
+    /* border */
+    text-center
+    max-w-3xl
+    min-h-screen
+    m-auto
+  }
+
+.header{
+    @apply
+    border-b
+    flex
+    flex-row
+    px-4
+    py-3
+    items-center
+    flex-none
+}  
+
+.title{
+    @apply
+    w-full
+}
+
+.back{
+    @apply
+    absolute
+}
+
+.content{
+    @apply
+    grow
+    /* bg-slate-300 */
+    min-h-full
+}
+
+.sheet{
+    box-shadow: 0px -4px 15px 0px rgba(0, 0, 0, 0.05);
+    @apply
+    absolute
+    rounded-t-2xl
+    bg-white
+    min-w-full
+    min-h-12
+    bottom-0
+}
+
+.btn-line{
+    @apply
+    bg-[#F2F0F0]
+    rounded-full
+    w-20
+    h-[6px]
+    mx-auto
+    m-2
 }
