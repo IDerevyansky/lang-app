@@ -3,6 +3,8 @@ import './vcblr.css';
 
 export default function vcblr({ params }) {
 
+  let listWords = ["Greetings", "Hello", "Hey", "Greetings", "Hello", "Hey", "Greetings", "Hello", "Hey"];
+
   return (
     <main className="content-box">
 
@@ -14,15 +16,30 @@ export default function vcblr({ params }) {
       <div className="content">
 
         <div className="cards">
-cards
+            cards
         </div>
 
         <div className="count-cards">
-12|200
+
+          <div className="first"><p>12</p></div>
+          <div className="second"><p>999</p></div>
+
         </div>
 
-        <div className="list-words">
-          
+        <div className="list-words-box">
+
+          <div className="dot-box">
+            <div className="dot"></div>
+          </div>
+
+          <div className="list-words">
+
+          {
+            listWords.map((item, key, arr)=>(<div key={key} id={key}><p>{item}</p></div>))
+          }
+    
+          </div>
+
         </div>
 
       </div>

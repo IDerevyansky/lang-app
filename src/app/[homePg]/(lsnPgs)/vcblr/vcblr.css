@@ -33,8 +33,9 @@
 .content{
     @apply
     grow
-    /* bg-slate-300 */
     min-h-full
+    flex
+    flex-col
 }
 
 .sheet{
@@ -56,4 +57,80 @@
     h-[6px]
     mx-auto
     m-2
+}
+
+.list-words-box{
+    @apply
+    overflow-hidden
+    flex
+    flex-col
+    gap-1
+    mt-4
+}
+
+.dot-box{
+    @apply
+    min-w-full
+}
+
+.dot{
+    @apply
+    mx-auto
+    w-[6px]
+    h-[6px]
+    bg-[#1E1E1E]
+    rounded-full
+}
+
+.list-words{
+    @apply
+    flex
+    flex-row
+    gap-4
+    mb-[20%]
+}
+
+.count-cards{
+    @apply
+    flex
+    flex-row
+    rounded-full
+    border
+    border-[#F3F2EC]
+    bg-[#F9F8F3]
+    w-fit
+    mx-auto
+    mt-8
+    px-2
+    py-1
+}
+
+.count-cards .first {
+    @apply
+    /* bg-green-800 */
+    border-r
+    border-[#B7B7B3]
+    w-[50px]
+}
+.count-cards .first p{
+    @apply
+    text-[#B7B7B3]
+}
+
+.count-cards .second {
+    @apply
+    /* bg-green-800 */
+    w-[50px]
+    
+}
+
+.count-cards .second p{
+    @apply
+    text-[#B7B7B3]
+}
+
+.cards{
+    @apply
+    border
+    grow
 }
