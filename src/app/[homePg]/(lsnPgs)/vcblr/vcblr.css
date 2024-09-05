@@ -45,6 +45,7 @@
     rounded-t-2xl
     bg-white
     min-w-full
+    inset-x-0
     min-h-12
     bottom-0
 }
@@ -86,8 +87,11 @@
     @apply
     flex
     flex-row
-    gap-4
+    scroll-smooth
+    overflow-y-scroll
+    /* gap-4 */
     mb-[20%]
+    scroll-m-7
 }
 
 .count-cards{
@@ -110,7 +114,7 @@
     /* bg-green-800 */
     border-r
     border-[#B7B7B3]
-    w-[50px]
+    w-[45px]
 }
 .count-cards .first p{
     @apply
@@ -120,7 +124,7 @@
 .count-cards .second {
     @apply
     /* bg-green-800 */
-    w-[50px]
+    w-[45px]
     
 }
 
@@ -134,3 +138,19 @@
     border
     grow
 }
+
+.word{
+    @apply
+    border
+    px-2
+}
+
+/* #q{
+  background-color: aquamarine;
+} */
+
+/* #\000032{
+    @apply
+    bg-slate-400
+    ml-9
+  } */

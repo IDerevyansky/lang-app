@@ -1,9 +1,25 @@
+'use client'
 import Image from "next/image";
+import { useEffect } from 'react';
 import './vcblr.css';
+
+
 
 export default function vcblr({ params }) {
 
-  let listWords = ["Greetings", "Hello", "Hey", "Greetings", "Hello", "Hey", "Greetings", "Hello", "Hey"];
+  let listWords = ["Greetings", "Hello", "Hey", "Greetings", "Hello", "Hey", "Greetings", "Hello", "Hey", "Hello", "Hey", "Greetings", "Hello", "Hey", "Greetings", "Hello", "Hey"];
+
+
+  useEffect(() => {
+
+    let listWordsX = document.getElementsByClassName('list-words');
+  
+    window.addEventListener('resize', ()=>(console.log(listWordsX[0].clientWidth)));
+
+    console.log(listWordsX[0].clientWidth);
+    
+  }, []);
+  
 
   return (
     <main className="content-box">
@@ -32,10 +48,10 @@ export default function vcblr({ params }) {
             <div className="dot"></div>
           </div>
 
-          <div className="list-words">
+          <div className="list-words border">
 
           {
-            listWords.map((item, key, arr)=>(<div key={key} id={key}><p>{item}</p></div>))
+            listWords.map((item, key)=>(<div key={key} id={key} className="word"><p>{item}</p></div>))
           }
     
           </div>
