@@ -1,13 +1,14 @@
 'use client'
 import Image from "next/image";
 import { useEffect } from 'react';
+import Card from "@/app/components/card"
 import './vcblr.css';
 
 
 
 export default function vcblr({ params }) {
 
-  let listWords = ["Greetings", "Hello", "Hey", "Greetings", "Hello", "Hey", "Greetings", "Hello", "Hey", "Hello", "Hey", "Greetings", "Hello", "Hey", "Greetings", "Hello", "Hey"];
+  let listWords = ["Greetings", "Hello", "Hey", "Greetings", "Hello", "Hey", "Greetings", "Hello", "Hey", "Hello", "Hey", "Greetings", "Hello", "Hey", "Greetings", "Hello", "Hey","Greetings", "Hello", "Hey", "Greetings", "Hello", "Hey", "Greetings", "Hello", "Hey", "Hello", "Hey", "Greetings", "Hello", "Hey", "Greetings", "Hello", "Hey"];
 
 
   useEffect(() => {
@@ -32,7 +33,7 @@ export default function vcblr({ params }) {
       <div className="content">
 
         <div className="cards">
-            cards
+           <Card/>
         </div>
 
         <div className="count-cards">

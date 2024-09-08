@@ -1,0 +1,83 @@
+.head{
+    @apply
+    flex
+    flex-col
+    gap-2
+    text-left
+}
+
+.description{
+    @apply
+    flex
+    flex-col
+    gap-2
+    text-left
+}
+
+.titl{
+    @apply
+    flex
+    flex-row
+    items-center
+    gap-2
+    truncate
+}
+
+.separator{
+    @apply
+    bg-gradient-to-r
+    from-[#CACACA]
+    h-[1px]
+    w-full
+}
+
+.card{
+    box-shadow: 0px 0px 24px 0px rgba(0, 0, 0, 0.15);
+
+    @apply
+    bg-[#F9F8F3]
+    rounded-2xl
+    w-[95%]
+    p-6
+    justify-between
+    mx-auto
+}
+
+.mainWord{
+    @apply
+    font-serif
+    w-full
+    font-semibold
+    text-[3rem]
+    /* hyphens-auto */
+    break-words
+    leading-tight
+}
+
+.transltWord{
+    @apply
+    font-semibold
+}
+
+.descrptWord{
+    @apply
+    text-[#605F5E]
+}
+
+.titl p{
+    @apply
+    text-[#B7B7B3]
+}
+
+.serif{
+    @apply
+    font-serif
+    font-semibold
+    text-[1.2rem]
+}
+
+.fontsize{
+    @apply
+    text-[0.8rem]
+    leading-tight
+}
