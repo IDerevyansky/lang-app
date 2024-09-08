@@ -13,11 +13,23 @@ export default function vcblr({ params }) {
 
   useEffect(() => {
 
-    let listWordsX = document.getElementsByClassName('list-words');
-  
-    window.addEventListener('resize', ()=>(console.log(listWordsX[0].clientWidth)));
+    let listWords = document.getElementsByClassName('list-words');
+     
+    let word = document.getElementById(0);
+    let wordWidth = word.clientWidth; 
 
-    console.log(listWordsX[0].clientWidth);
+    window.addEventListener('resize', ()=>(console.log(listWords[0].clientWidth)));
+
+    // console.log(Math.round(wordWidth/2));
+
+    
+
+    console.log(listWordsX);
+
+
+
+
+
     
   }, []);
   
@@ -49,7 +61,7 @@ export default function vcblr({ params }) {
             <div className="dot"></div>
           </div>
 
-          <div className="list-words border">
+          <div className="list-words">
 
           {
             listWords.map((item, key)=>(<div key={key} id={key} className="word"><p>{item}</p></div>))
@@ -61,10 +73,10 @@ export default function vcblr({ params }) {
 
       </div>
 
-      <div className="sheet">
+      {/* <div className="sheet">
         <div className="btn-line"></div>
 
-      </div>
+      </div> */}
 
     </main>
   );
