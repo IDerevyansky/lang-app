@@ -85,10 +85,19 @@ export default function vcblr({ params }) {
 
     let listWords = document.getElementsByClassName('list-words');
     let centerListWords = listWords[0].clientWidth/2; //191
-    console.log(listWords);
 
-    let rightside = document.getElementsByClassName('rightside');
-    let leftside = document.getElementsByClassName('leftside');
+    listWords[0].scroll(
+      {
+        // top: 100,
+        left: 192-207+139/2,
+        behavior: "smooth",
+      }
+    );
+
+
+    // listWords[0].style.paddingLeft = centerListWords + 'px';
+    // listWords[0].style.paddingRight = centerListWords + 'px';
+    console.log(listWords[0].children);
 
     let count = 0; 
 

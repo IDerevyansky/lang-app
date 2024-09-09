@@ -92,6 +92,7 @@
     flex-row
     scroll-smooth
     overflow-y-scroll
+    px-48
 }
 
 .count-cards{
@@ -154,3 +155,7 @@
     ml-9
   } */
 
+#\000032{
+    @apply
+    bg-lime-500
+}
