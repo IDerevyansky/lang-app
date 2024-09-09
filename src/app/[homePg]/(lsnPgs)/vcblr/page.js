@@ -1,6 +1,6 @@
 'use client'
 import Image from "next/image";
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import Card from "@/app/components/card"
 import './vcblr.css';
 
@@ -8,27 +8,111 @@ import './vcblr.css';
 
 export default function vcblr({ params }) {
 
-  let listWords = ["Greetings", "Hello", "Hey", "Greetings", "Hello", "Hey", "Greetings", "Hello", "Hey", "Hello", "Hey", "Greetings", "Hello", "Hey", "Greetings", "Hello", "Hey","Greetings", "Hello", "Hey", "Greetings", "Hello", "Hey", "Greetings", "Hello", "Hey", "Hello", "Hey", "Greetings", "Hello", "Hey", "Greetings", "Hello", "Hey"];
+  const [listWords, setListWords] = useState(
+    [
+      {
+        "word": "VeryLongWord0",
+        "part_of_speech": "междометие",
+        "translation": "привет",
+        "synonyms": ["hi", "greetings", "hey"],
+        "description": "Приветствие, используемое при встрече или обращении к кому-либо.",
+        "context_usage": {
+          "target_language": "Hello, how are you today?",
+          "translation": "Привет, как дела сегодня?"
+        }
+      },
+      {
+        "word": "LongWord1",
+        "part_of_speech": "междометие",
+        "translation": "привет",
+        "synonyms": ["hi", "greetings", "hey"],
+        "description": "Приветствие, используемое при встрече или обращении к кому-либо.",
+        "context_usage": {
+          "target_language": "Hello, how are you today?",
+          "translation": "Привет, как дела сегодня?"
+        }
+      },
+      {
+        "word": "Word2",
+        "part_of_speech": "междометие",
+        "translation": "привет",
+        "synonyms": ["hi", "greetings", "hey"],
+        "description": "Приветствие, используемое при встрече или обращении к кому-либо.",
+        "context_usage": {
+          "target_language": "Hello, how are you today?",
+          "translation": "Привет, как дела сегодня?"
+        }
+      },
+      {
+        "word": "VeryLongWord3",
+        "part_of_speech": "междометие",
+        "translation": "привет",
+        "synonyms": ["hi", "greetings", "hey"],
+        "description": "Приветствие, используемое при встрече или обращении к кому-либо.",
+        "context_usage": {
+          "target_language": "Hello, how are you today?",
+          "translation": "Привет, как дела сегодня?"
+        }
+      },
+      {
+        "word": "VeryLong4",
+        "part_of_speech": "междометие",
+        "translation": "привет",
+        "synonyms": ["hi", "greetings", "hey"],
+        "description": "Приветствие, используемое при встрече или обращении к кому-либо.",
+        "context_usage": {
+          "target_language": "Hello, how are you today?",
+          "translation": "Привет, как дела сегодня?"
+        }
+      },
+      {
+        "word": "VeryWord5",
+        "part_of_speech": "междометие",
+        "translation": "привет",
+        "synonyms": ["hi", "greetings", "hey"],
+        "description": "Приветствие, используемое при встрече или обращении к кому-либо.",
+        "context_usage": {
+          "target_language": "Hello, how are you today?",
+          "translation": "Привет, как дела сегодня?"
+        }
+      },
+    ]
+  );
+
 
 
   useEffect(() => {
 
     let listWords = document.getElementsByClassName('list-words');
-     
-    let word = document.getElementById(0);
-    let wordWidth = word.clientWidth; 
+    let centerListWords = listWords[0].clientWidth/2; //191
+    console.log(listWords);
 
-    window.addEventListener('resize', ()=>(console.log(listWords[0].clientWidth)));
+    let rightside = document.getElementsByClassName('rightside');
+    let leftside = document.getElementsByClassName('leftside');
 
-    // console.log(Math.round(wordWidth/2));
+    let count = 0; 
 
-    
+    listWords[0].addEventListener(
+      'touchmove', 
+      (e)=>{
 
-    console.log(listWordsX);
+        let pageX = Math.round(e.changedTouches[0].pageX);
+
+        // console.log(pageX);
+
+      }, { passive: true }
+    );
 
 
+    // Tip:
+    // 1.Перебираем массив с данными
+    // 2.Передаем цифру в scrollTo()
+    // или
+    // 3.Передаем значение в div margin left/right
+    // или 
+    // 4.Попробовать анкерные ссылки <- try is govno
 
-
+   
 
     
   }, []);
@@ -45,7 +129,7 @@ export default function vcblr({ params }) {
       <div className="content">
 
         <div className="cards">
-           <Card/>
+           <Card data={listWords}/>
         </div>
 
         <div className="count-cards">
@@ -63,10 +147,12 @@ export default function vcblr({ params }) {
 
           <div className="list-words">
 
+
           {
-            listWords.map((item, key)=>(<div key={key} id={key} className="word"><p>{item}</p></div>))
+            listWords.map((item, key)=>( <div key={key} id={key} className="word"><p>{item.word}</p></div> ))
           }
-    
+
+          
           </div>
 
         </div>

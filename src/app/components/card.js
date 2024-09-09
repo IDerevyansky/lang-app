@@ -1,6 +1,7 @@
 import "./card.css";
 
-export default function Card(){
+export default function Card(props){
+    //console.log(props.data[0].word);
     return(
         <div className="card">
 

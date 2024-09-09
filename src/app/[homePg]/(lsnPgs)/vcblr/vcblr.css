@@ -87,13 +87,11 @@
 
 .list-words{
     @apply
+    bg-slate-100
     flex
     flex-row
     scroll-smooth
     overflow-y-scroll
-    /* gap-4 */
-    /* mb-[20%] */
-    scroll-m-7
 }
 
 .count-cards{
@@ -146,15 +144,13 @@
 .word{
     @apply
     /* border */
+    py-1
     px-2
 }
-
-/* #q{
-  background-color: aquamarine;
-} */
 
 /* #\000032{
     @apply
     bg-slate-400
     ml-9
   } */
+
