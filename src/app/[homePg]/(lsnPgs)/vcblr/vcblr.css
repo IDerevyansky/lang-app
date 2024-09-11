@@ -87,12 +87,14 @@
 
 .list-words{
     @apply
+    border-2
     bg-slate-100
     flex
     flex-row
+    w-full
     scroll-smooth
     overflow-y-scroll
-    px-48
+    px-[50%]
 }
 
 .count-cards{
