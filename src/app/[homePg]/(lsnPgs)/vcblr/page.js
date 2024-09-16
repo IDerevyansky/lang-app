@@ -89,74 +89,70 @@ export default function vcblr({ params }) {
     //Offset div list-words
     let ListWordsOffset = listWords[0].offsetLeft;
 
+    console.log(listWords);
+
+    //Set update value for resize
+    window.addEventListener('resize', ()=>{
+
+    ListWordsCenter = listWords[0].clientWidth/2;
+    ListWordsOffset = listWords[0].offsetLeft;
+    // console.log("ListWordsCenter: " + ListWordsCenter + " ListWordsOffset: " + ListWordsOffset);
+  
+    } );
 
 
-    //change to loop FOR 
-    let word2 = document.getElementById(2);
-    let word2Offeset = word2.offsetLeft;
-    let word2Width = word2.clientWidth; 
+    //set function scroll from click each item 
+    function scrollToItem(q){
 
-    console.log( listWords[0].children.length );
+      let word = document.getElementById(q);
+      let wordOffeset = word.offsetLeft;
+      let wordWidth = word.clientWidth;
+
+      listWords[0].scroll(
+        {
+          // top: 100,
+          left: wordOffeset - ListWordsOffset - ListWordsCenter + wordWidth/2,
+          behavior: "smooth",
+        }
+      );
+
+    } 
+
+    //set default value
+    scrollToItem(0);
+    
+
+    function countOffset(e){
+
+      for (let i = 0; i < listWords[0].children.length; i++) {
+       
+        let word = document.getElementById(i);
+        let wordOffeset = word.offsetLeft;
+        let wordWidth = Math.round(word.clientWidth);
+
+        ListWordsCenter = listWords[0].clientWidth/2;
+        ListWordsOffset = listWords[0].offsetLeft;
+
+        console.log('word: '+i+' wordOffeset: '+wordOffeset+' clientWidth: '+wordWidth);
+        console.log('scrollLeft: '+e.target.scrollLeft);
+        //e.target.scrollLeft
+        
+      }
+
+      console.log('-----------------------');
+
+    }
 
     //set listener events to each [id]
     for (let i = 0; i < listWords[0].children.length; i++) {
     
-      //document.getElementById(i).addEventListener('', ); <-- Set function with listener  to events touchMove/Scroll/Click/touchStart
- 
-      //Example
-      // function startup() {
-      //   const el = document.getElementById("canvas");
-      //   el.addEventListener("touchstart", handleStart);
-      //   el.addEventListener("touchend", handleEnd);
-      //   el.addEventListener("touchcancel", handleCancel);
-      //   el.addEventListener("touchmove", handleMove);
-      //   log("Initialized.");
-      // }
-      
-      // document.addEventListener("DOMContentLoaded", startup);
-
+      document.getElementById(i).addEventListener('click', ()=>scrollToItem(i) );
+      // document.getElementById(i).addEventListener('touchend', ()=>scrollToItem(i), { passive: true } );
 
     }
 
-    //Set listen width window
-    window.addEventListener('resize', ()=>{
-
-    //Update value centerListWords
-    ListWordsCenter = listWords[0].clientWidth/2;
-
-    } );
-
-
-
-    listWords[0].scroll(
-      {
-        // top: 100,
-        left: word2Offeset - ListWordsOffset - ListWordsCenter + word2Width/2,
-        behavior: "smooth",
-      }
-    );
-
-
-    listWords[0].addEventListener(
-      'touchmove', 
-      (e)=>{
-
-        let pageX = Math.round(e.changedTouches[0].pageX);
-
-        // console.log(e);
-
-      }, { passive: true }
-    );
-
-
-  // Tip:-------------------------
-  //  listen:
-  //  - Resize -> Controll page center
-  //  - Touch/Scroll -> Math search a div_world with min value and make the div centred position
-  //  - Click/Tap -> Math after click we have [id] div_world and make the div ctntred position 
-
-   
-
+    listWords[0].addEventListener( 'scrollend', (e)=>countOffset(e) );
+    
     
   }, []);
   

@@ -87,13 +87,14 @@
 
 .list-words{
     @apply
-    border-2
+    /* border-2 */
     bg-slate-100
     flex
     flex-row
     w-full
     scroll-smooth
     overflow-y-scroll
+    /* overflow-hidden */
     px-[50%]
 }
 
