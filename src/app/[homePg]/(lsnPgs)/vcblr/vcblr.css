@@ -62,7 +62,7 @@
 
 .list-words-box{
     @apply
-    overflow-hidden
+    /* overflow-hidden */
     flex
     flex-col
     gap-1
@@ -88,7 +88,7 @@
 .list-words{
     @apply
     /* border-2 */
-    bg-slate-100
+    /* bg-slate-100 */
     flex
     flex-row
     w-full
@@ -152,13 +152,39 @@
     px-2
 }
 
+
+
 /* #\000032{
     @apply
     bg-slate-400
     ml-9
   } */
 
-#\000032{
+/* #\000032{
     @apply
     bg-lime-500
-}
+} */
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.list-words::-webkit-scrollbar {
+    display: none;
+  }
+  
+  /* Hide scrollbar for IE, Edge and Firefox */
+  .list-words {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+  }
+
+  .puls{
+    animation: 0.2s linear 0s alternate puls;
+  }
+
+  @keyframes puls {
+    0%{
+        scale: 100%;
+    }
+    100%{
+        scale: 130%;
+    }
+  }
