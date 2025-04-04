@@ -8,8 +8,7 @@
     min-h-screen
     m-auto
   }
-
-  
+ 
 .header{
     @apply
     border-b
