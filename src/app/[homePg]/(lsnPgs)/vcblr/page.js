@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react';
 import Card from "@/app/components/card"
 import './vcblr.css';
 
+
 export default function vcblr({ params }) {
 
   const [listWords, setListWords] = useState(
